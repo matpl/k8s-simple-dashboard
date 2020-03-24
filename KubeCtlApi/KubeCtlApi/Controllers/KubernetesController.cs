@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using k8s;
+using KubeCtlApi.Models;
 using KubeCtlApi.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,25 +33,25 @@ namespace KubeCtlApi.Controllers
         }
 
         [HttpGet("Deployments", Name = "getDeployments")]
-        public IEnumerable<string> GetDeployments(string @namespace)
+        public NamespacedList<DeploymentDto> GetDeployments(string @namespace)
         {
             return _k8sClient.GetNamespacedDeployments(@namespace);
         }
 
         [HttpGet("Services", Name = "getServices")]
-        public IEnumerable<string> GetServices(string @namespace)
+        public NamespacedList<ServiceDto> GetServices(string @namespace)
         {
             return _k8sClient.GetNamespacedServices(@namespace);
         }
 
         [HttpGet("Ingresses", Name = "getIngresses")]
-        public IEnumerable<string> GetIngresses(string @namespace)
+        public NamespacedList<IngressDto> GetIngresses(string @namespace)
         {
             return _k8sClient.GetNamespacedIngresses(@namespace);
         }
 
         [HttpGet("Pods", Name = "getPods")]
-        public IEnumerable<string> GetPods(string @namespace)
+        public NamespacedList<string> GetPods(string @namespace)
         {
             return _k8sClient.GetNamespacedPods(@namespace);
         }

@@ -4,6 +4,8 @@
 </script>
 
 <h2>Pods</h2>
-{#each $pods as pod}
-    <a href="#" style="display:block;">{pod}</a>
-{/each}
+{#if $pods}
+    {#each $pods.items as pod}
+        <a href="#" style="display:block;">{pod}</a>
+    {/each}
+{/if}

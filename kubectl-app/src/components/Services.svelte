@@ -4,6 +4,8 @@
 </script>
 
 <h2>Services</h2>
-{#each $services as services}
-    <a href="#" style="display:block;">{services}</a>
-{/each}
+{#if $services}
+    {#each $services.items as service}
+        <a href="#" style="display:block;">{service.name}</a>
+    {/each}
+{/if}

@@ -12,7 +12,7 @@ const fetchIngresses = async (namespace) => {
 export const ingresses = derived(
     selectedNamespace,
     async ($selectedNamespace, set) => {
-        set([]);
+        set(null);
         if($selectedNamespace) {
             let ingresses = await fetchIngresses($selectedNamespace);
             // this check is necessary because in an async derived store, the promise can resolve after another change on the initial store

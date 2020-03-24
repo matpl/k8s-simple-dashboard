@@ -4,6 +4,7 @@
     import Services from "./Services.svelte";
     import Ingresses from "./Ingresses.svelte";
     import Pods from "./Pods.svelte";
+    import Links from "./Links.svelte";
 
     function handleClick(event) {
 		selectedNamespace.set(event.target.innerHTML);
@@ -26,4 +27,5 @@
     <Services />
     <Ingresses />
     <Pods />
+    <Links />
 {/if}

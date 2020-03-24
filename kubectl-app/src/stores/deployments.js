@@ -12,7 +12,7 @@ const fetchDeployments = async (namespace) => {
 export const deployments = derived(
     selectedNamespace,
     async ($selectedNamespace, set) => {
-        set([]);
+        set(null);
         if($selectedNamespace) {
             let deployments = await fetchDeployments($selectedNamespace);
             // this check is necessary because in an async derived store, the promise can resolve after another change on the initial store
