@@ -3,3 +3,5 @@ public/bundle.*
 .vs
 obj
 bin
+dist
+public

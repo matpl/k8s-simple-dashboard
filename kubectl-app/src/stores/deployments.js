@@ -1,13 +1,8 @@
 import { writable, derived, get } from "svelte/store";
 import { selectedNamespace } from "./namespaces";
-import { kubernetesApi } from "./api";
-
+import { fetchDeployments } from "./types/Deployment.ts";
+ 
 export const selectedDeployment = writable(null);
-
-const fetchDeployments = async (namespace) => {
-    let res = await kubernetesApi.then(a => a.getDeployments({"namespace": namespace}));
-    return res.body;
-};
 
 export const deployments = derived(
     selectedNamespace,

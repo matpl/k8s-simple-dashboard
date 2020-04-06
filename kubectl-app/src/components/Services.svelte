@@ -5,7 +5,7 @@
 
 <h2>Services</h2>
 {#if $services}
-    {#each $services.items as service}
-        <a href="#" style="display:block;">{service.name}</a>
+    {#each $services.Items as service}
+        <a href="#" style="display:block;">{service.Name}</a>
     {/each}
 {/if}

@@ -42,6 +42,16 @@ module.exports = {
 					prod ? MiniCssExtractPlugin.loader : 'style-loader',
 					'css-loader'
 				]
+			},
+			{
+				test: /\.ts$/,
+				use: {
+				  loader: 'ts-loader',
+				  options: {
+					transpileOnly: true //HMR doesn't work without this
+				  }
+				},
+				exclude: /node_modules/
 			}
 		]
 	},

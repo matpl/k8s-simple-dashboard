@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "module": "esnext",
+      "moduleResolution": "node",
+      "noImplicitAny": false,
+      "outDir": "./dist/",
+      "rootDir": "./src/",
+      "sourceMap": true,
+      "strict": true,
+      "target": "es2018",
+      "noFallthroughCasesInSwitch": true,
+      "experimentalDecorators": true,
+      "declaration": true,
+      "allowSyntheticDefaultImports": true,
+      "composite": true
+    },
+    "exclude": [
+      "webpack.config.js",
+      "node_modules",
+      "dist"
+    ]
+  }
