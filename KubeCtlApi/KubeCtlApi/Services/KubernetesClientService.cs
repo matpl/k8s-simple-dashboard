@@ -71,7 +71,17 @@ namespace KubeCtlApi.Services
                     {
                         Name = i.Metadata.Name,
                         Labels = new Dictionary<string, string>(i.Metadata.Labels),
-                        Selector = new Dictionary<string, string>(i.Spec.Selector)
+                        Selector = new Dictionary<string, string>(i.Spec.Selector),
+                        Spec = new ServiceSpecDto()
+                        {
+                            Ports = i.Spec.Ports.Select(p => new ServicePortDto()
+                            {
+                                Name = p.Name,
+                                Port = p.Port,
+                                TargetPort = p.TargetPort,
+                                Protocol = p.Protocol
+                            })
+                        }
                     });
                 }
                 return list;
